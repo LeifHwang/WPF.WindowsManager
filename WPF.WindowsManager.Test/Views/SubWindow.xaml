@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPF.WindowsManager.Test.Views.SubWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:windowsManager="clr-namespace:WPF.WindowsManager;assembly=WPF.WindowsManager"
+        Title="SubWindow" Height="300" Width="300" FontSize="16" ShowInTaskbar="False" Loaded="SubWindow_OnLoaded"
+        Closing="SubWindow_OnClosing" WindowStyle="None" ResizeMode="CanResize">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" CornerRadius="0"/>
+        <!--GlassFrameThickness="0" NonClientFrameEdges="None"-->
+    </WindowChrome.WindowChrome>
+
+    <Border BorderBrush="LightGray" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.ColumnSpan="2" MouseLeftButtonDown="TitleBorder_OnMouseLeftButtonDown">
+                <Border.Background>
+                    <SolidColorBrush Color="Gray" Opacity="0.2"/>
+                </Border.Background>
+
+                <Grid>
+                    <TextBlock Text="{Binding Title,RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="15"/>
+
+                    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+                        <Button Click="BtnMin_OnClick" Style="{StaticResource WindowMinButtonStyle}"/>
+                        <ToggleButton x:Name="BtnWinMax" IsEnabled="False" Click="BtnMax_OnClick" Style="{StaticResource WindowMaxButtonStyle}"/>
+                        <Button Click="BtnClose_OnClick" Style="{StaticResource WindowCloseButtonStyle}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" windowsManager:WindowsDockManager.DockRegionName="CoverRegion">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <CheckBox x:Name="ResizeCk" Content="改变大小" Checked="ResizeCk_Checked" Unchecked="ResizeCk_OnUnchecked"/>
+                    <CheckBox x:Name="TaskbarCk" Content="任务栏显示" Margin="0,10,0,0" Checked="TaskbarCk_Checked" Unchecked="TaskbarCk_OnUnchecked"/>
+                    <CheckBox x:Name="CloseHide" Content="关闭时隐藏" Margin="0,10,0,0" Checked="Hide_Checked" Unchecked="Hide_OnUnchecked"/>
+
+                    <Button Content="打开子窗口" Margin="0,20,0,0" Click="BtnSub_OnClick"/>
+                    <Button x:Name="BtnHigher" Content="打开高层窗口" Margin="0,10,0,0" Click="BtnHigher_OnClick"/>
+                    <Button Content="打开文件…" Margin="0,10,0,0" Click="BtnFile_OnClick"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

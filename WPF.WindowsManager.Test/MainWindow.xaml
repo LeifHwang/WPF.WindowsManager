@@ -1,0 +1,77 @@
+﻿<Window x:Class="WPF.WindowsManager.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:windowsManager="clr-namespace:WPF.WindowsManager;assembly=WPF.WindowsManager"
+        Title="MainWindow" Height="768" Width="1366" WindowStartupLocation="CenterScreen" FontSize="16" Loaded="MainWindow_OnLoaded" 
+        WindowStyle="None" ResizeMode="CanResize">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="5" CornerRadius="0"/>
+    </WindowChrome.WindowChrome>
+
+    <Border BorderBrush="Gray" BorderThickness="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="TitleBorder" Grid.ColumnSpan="2" MouseLeftButtonDown="TitleBorder_OnMouseLeftButtonDown">
+                <Border.Background>
+                    <SolidColorBrush Color="Gray" Opacity="0.2"/>
+                </Border.Background>
+
+                <Grid>
+                    <TextBlock Text="Title Area" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20"/>
+
+                    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+                        <Button Click="BtnMin_OnClick" Style="{StaticResource WindowMinButtonStyle}"/>
+                        <ToggleButton x:Name="BtnWinMax" Click="BtnMax_OnClick" Style="{StaticResource WindowMaxButtonStyle}"/>
+                        <Button Click="BtnClose_OnClick" Style="{StaticResource WindowCloseButtonStyle}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Popup Grid.Row="0" Grid.Column="0" x:Name="TestPopup" PlacementTarget="{Binding ElementName=TitleBorder}" Placement="Center" AllowsTransparency="True"
+                   VerticalOffset="45" StaysOpen="False">
+                <Border CornerRadius="5" Background="Gray" x:Name="PopupBorder" Height="40">
+                    <TextBlock Margin="10,5" Text="Test Popup" FontSize="20"/>
+                </Border>
+            </Popup>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="50">
+                <CheckBox Margin="0,10,0,0" Content="显示Popup" IsChecked="{Binding IsOpen,ElementName=TestPopup}"/>
+                <CheckBox Margin="0,10,0,0" Content="显示Dock窗口" Checked="DockBtn_OnChecked" Unchecked="DockBtn_OnUnChecked"/>
+
+                <Button Height="50" Margin="0,20,0,0" Content="打开低级窗口" Click="BtnLow_OnClick"/>
+                <Button Height="50" Margin="0,10,0,0" Content="打开普通窗口" Click="BtnNormal_OnClick"/>
+                <Button Height="50" Margin="0,10,0,0" Content="打开顶部窗口" Click="BtnTop_OnClick"/>
+                <Button Height="50" Margin="0,10,0,0" Content="打开叠加窗口" Click="BtnCover_OnClick"/>
+                <Button Height="50" Margin="0,10,0,0" Content="打开模态窗口" Click="BtnDialo_OnClick"/>
+                <Button Height="50" Margin="0,10,0,0" Content="另存为…" Click="BtnFileDialo_OnClick"/>
+            </StackPanel>
+            <GroupBox Grid.Row="1" Grid.Column="1" Header="运行状态" Margin="50" windowsManager:WindowsDockManager.DockRegionName="Dock">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal">
+                        <TextBlock x:Name="MemoryStartInfo"/>
+                        <TextBlock x:Name="MemoryInfo" Margin="30,0,0,0"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="1" x:Name="WinCounter" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="2" x:Name="ThreadCounter" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="3" x:Name="HandleCounter" HorizontalAlignment="Left"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Border>
+</Window>
