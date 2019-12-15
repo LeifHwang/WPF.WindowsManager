@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.WindowsManager", "WPF.WindowsManager\WPF.WindowsManager.csproj", "{88E91226-90E9-4933-B349-7C9D5604A4CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.WindowsManager.Test", "WPF.WindowsManager.Test\WPF.WindowsManager.Test.csproj", "{262029B3-938C-423C-9D9A-06820C6A8B9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.WindowsManager.Demo", "WPF.WindowsManager.Demo\WPF.WindowsManager.Demo.csproj", "{262029B3-938C-423C-9D9A-06820C6A8B9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

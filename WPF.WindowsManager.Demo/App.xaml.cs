@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WPF.WindowsManager.Test
+namespace WPF.WindowsManager.Demo
 {
     /// <summary>
     /// App.xaml 的交互逻辑

@@ -7,9 +7,9 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using WPF.WindowsManager.Test.Views;
+using WPF.WindowsManager.Demo.Views;
 
-namespace WPF.WindowsManager.Test
+namespace WPF.WindowsManager.Demo
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑

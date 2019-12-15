@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF.WindowsManager.Test.Views.CoverWindow"
+﻿<Window x:Class="WPF.WindowsManager.Demo.Views.CoverWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="CoverWindow" Height="300" Width="300" WindowStyle="None" ShowInTaskbar="False" AllowsTransparency="True"

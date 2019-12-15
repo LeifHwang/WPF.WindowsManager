@@ -1,4 +1,4 @@
-﻿<Window x:Class="WPF.WindowsManager.Test.Views.DockButton"
+﻿<Window x:Class="WPF.WindowsManager.Demo.Views.DockButton"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:windowsManager="clr-namespace:WPF.WindowsManager;assembly=WPF.WindowsManager"

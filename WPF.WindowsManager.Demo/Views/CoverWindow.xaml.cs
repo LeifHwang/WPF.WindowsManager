@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace WPF.WindowsManager.Test.Views
+namespace WPF.WindowsManager.Demo.Views
 {
     /// <summary>
     /// CallWindow.xaml 的交互逻辑

@@ -1,5 +1,5 @@
 ﻿
-namespace WPF.WindowsManager.Test.Views
+namespace WPF.WindowsManager.Demo.Views
 {
     /// <summary>
     /// DockButton.xaml 的交互逻辑

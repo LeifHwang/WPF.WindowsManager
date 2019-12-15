@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using Microsoft.Win32;
 
-namespace WPF.WindowsManager.Test.Views
+namespace WPF.WindowsManager.Demo.Views
 {
     /// <summary>
     /// SubWindow.xaml 的交互逻辑
