@@ -25,8 +25,8 @@ jobs:
         env:
           PRJ: "./WPF.WindowsManager/WPF.WindowsManager.csproj"
         run: |
-          dotnet build $PRJ --configuration Release
-          nuget pack $PRJ -Properties Configuration=Release -OutputDirectory $PKG_DIR
+          dotnet build ${{env.PRJ}} --configuration Release
+          nuget pack ${{env.PRJ}} -Properties Configuration=Release -OutputDirectory ${{env.PKG_DIR}}
 
       - name: NuGet login (OIDC → temp API key)
         uses: NuGet/login@v1
