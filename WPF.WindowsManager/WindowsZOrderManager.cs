@@ -1,6 +1,4 @@
-﻿//#define PRINT
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Interop;
 using System.Windows.Media;
+
 using WPF.WindowsManager.Interop;
 using WPF.WindowsManager.Interop.WinPosition;
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Interop;
+
 using WPF.WindowsManager.Interop;
 using WPF.WindowsManager.Interop.WinSize;
 

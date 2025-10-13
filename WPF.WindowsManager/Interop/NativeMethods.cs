@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Interop;
+
 using WPF.WindowsManager.Interop.WinPosition;
 using WPF.WindowsManager.Interop.WinSize;
 

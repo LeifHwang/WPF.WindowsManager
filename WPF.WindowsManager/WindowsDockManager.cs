@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+
 using WPF.WindowsManager.Interop;
 
 namespace WPF.WindowsManager
