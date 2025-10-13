@@ -6,7 +6,7 @@ on:
   pull_request:
 
 env:
-  PKG_DIR: nupkgs
+  PKG_DIR: "nupkgs"
 
 jobs:
   build-and-publish:
