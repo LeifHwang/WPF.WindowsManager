@@ -23,7 +23,7 @@ jobs:
 
       - name: pack
         env:
-          PRJ: ./WPF.WindowsManager/WPF.WindowsManager.csproj
+          PRJ: "./WPF.WindowsManager/WPF.WindowsManager.csproj"
         run: |
           dotnet build $PRJ --configuration Release
           nuget pack $PRJ -Properties Configuration=Release -OutputDirectory $PKG_DIR
